@@ -5,11 +5,17 @@ RSpec.describe NesCartridge do
     expect(cart.title).to eq("Tetris")
   end
 
-  it "has a reader for developer" do
-    expect(cart.developer).to eq("Tengen")
+  it "has a reader for manufacturer" do
+    expect(cart.manufacturer).to eq("Tengen")
   end
 
   it "has a reader for year" do
     expect(cart.year).to eq(1988)
+  end
+
+  describe "#to_s" do
+    it "includes the title, manufacturer, and year" do
+      expect(cart.to_s).to eq("Tetris by Tengen ©1988")
+    end
   end
 end

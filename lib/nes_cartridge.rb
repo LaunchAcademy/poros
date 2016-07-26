@@ -1,9 +1,13 @@
 class NesCartridge
-  attr_reader :title, :developer, :year
-  
-  def initialize(title, developer, year)
+  attr_reader :title, :manufacturer, :year
+
+  def initialize(title, manufacturer, year)
     @title = title
-    @developer = developer
+    @manufacturer = manufacturer
     @year = year
+  end
+
+  def to_s
+    "#{title} by #{manufacturer} ©#{year}"
   end
 end
